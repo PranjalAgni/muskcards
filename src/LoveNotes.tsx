@@ -31,6 +31,7 @@ const NOTES: string[] = [
   "meri gulabi gaal wali cutuuuu",
   "phisal gaya hai dil tujhpeeee ab tu aa ke sambhalll reee 💖",
   "I love you so so much my cutuuuu ❤️‍🔥🫶❤️‍🔥",
+  "And I’d love to call you my girlfriend. 💕 Will you be mine?",
   "acha jane se pahle ek chiz aur btani thi..... 🫰🏻",
   "pahle smile kro babyyyy 🤗",
   "this was the #1 surprise tabhi I said am working on it 🤫",
