@@ -20,15 +20,28 @@ import {
 
 // ------------------- Content ----------------------------------------------
 const NOTES: string[] = [
-  "Hey love ✨\nBefore anything else… take a deep breath. This little page is just for you.",
-  "I love the way you laugh — it’s like a tiny sunrise I get to keep in my pocket ☀️",
-  "Thank you for being my calm on loud days and my cheer on quiet ones 💛",
-  "Every small moment with you feels like a favorite song on repeat 🎵",
-  "You make ordinary days feel like confetti — soft, bright, and a little bit magical 🎊",
-  "I’m proud of you. For the big wins, sure — but mostly for the tiny brave steps no one sees.",
-  "Here’s a secret: I still get butterflies when I see your name pop up 🦋",
-  "No matter where we are, you’re my home. Always. 🏡",
-  "P.S. This is me saying it again (and again): I love you. A lot. ♾️💖",
+  "Hey mukssuuu ✨\nBefore anything else… take a deep breath. This little page is just for you.",
+  "I wanted to surprise you the Sunny way and make you feel special and loved ☀️",
+  "I am not good writer like you but taking my best shot at it",
+  "Never thought in my life that turning 27 will bring such a good gift to both of us (but mine is better 😏)",
+  "I believe its all God's plan for us I was supposed to be at home until this diwali but things changed and I came before your birthday 🍰",
+  "The day I started from my home to hyd we were on a non-stop call until the takeoff ✈️",
+  "You tracked me in the sky loved that 🫰🏻",
+  "then continuing that call till I reached home",
+  "from listening music and chatting together to singing each other fav songs 🎤 and watching movies together hand in hand, it feels so natural and so right",
+  "Ab toh meri playlist is also changed from hardcore gym songs to romantic songs 🎧 and \"because\" is U",
+  "So I wanted to say something to you...",
+  "thoda next kro pahle ⏭️",
+  "thoda aur..... ⌛️",
+  "okay so the thing is 🙉",
+  "meri gulabi gaal wali cutuuuu",
+  "phisal gaya hai dil tujhpeeee ab tu aa ke sambhalll reee 💖",
+  "I love you so so much my cutuuuu ❤️‍🔥🫶❤️‍🔥",
+  "acha jane se pahle ek chiz aur btani thi..... 🫰🏻",
+  "pahle smile kro babyyyy 🤗",
+  "this was the #1 surprise tabhi I said am working on it 🤫",
+  "but you got so restless toh surprise ke upar wala surprise btana para",
+  "our bangalore plan is ONNN babe see you very very soon 💖"
 ];
 
 // ------------------- Utilities -------------------------------------------
@@ -277,7 +290,7 @@ function runSelfTests() {
 export default function LoveNotesApp() {
   useHandwritingFonts();
   const [index, setIndex] = useState(0);
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(true); // Always unlocked for now
   const total = NOTES.length;
 
   // Debug: log index & current note and run dev tests
@@ -287,6 +300,8 @@ export default function LoveNotesApp() {
     } catch (e) {
       console.error("[tests] failed", e);
     }
+    // Set localStorage to always unlocked
+    localStorage.setItem("love:unlocked", "true");
   }, []);
 
   const next = () => {
@@ -320,7 +335,7 @@ export default function LoveNotesApp() {
                 <Sparkles className="h-5 w-5" />
               </div>
               <div className="leading-tight">
-                <p className="text-xs text-rose-500">for my favorite person</p>
+                <p className="text-xs text-rose-500">for my muksuuu</p>
                 <h1 className="text-lg font-semibold text-rose-500">I Love You</h1>
               </div>
               <div className="grid h-8 w-8 place-items-center rounded-xl bg-rose-100 text-rose-500">
