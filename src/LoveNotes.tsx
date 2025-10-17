@@ -1,13 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./components/Button";
-import {
-  Heart,
-  Sparkles,
-  Lock,
-  Eye,
-  EyeOff,
-} from "lucide-react";
+import { Heart, Sparkles, Lock, Eye, EyeOff } from "lucide-react";
 
 /**
  * 💌 Love Notes – fancy card edition + handwriting font (with debug logs)
@@ -29,7 +23,7 @@ const NOTES: string[] = [
   "You tracked me in the sky loved that 🫰🏻",
   "then continuing that call till I reached home",
   "from listening music and chatting together to singing each other fav songs 🎤 and watching movies together hand in hand, it feels so natural and so right",
-  "Ab toh meri playlist is also changed from hardcore gym songs to romantic songs 🎧 and \"because\" is U",
+  'Ab toh meri playlist is also changed from hardcore gym songs to romantic songs 🎧 and "because" is U',
   "So I wanted to say something to you...",
   "thoda next kro pahle ⏭️",
   "thoda aur..... ⌛️",
@@ -41,7 +35,7 @@ const NOTES: string[] = [
   "pahle smile kro babyyyy 🤗",
   "this was the #1 surprise tabhi I said am working on it 🤫",
   "but you got so restless toh surprise ke upar wala surprise btana para",
-  "our bangalore plan is ONNN babe see you very very soon 💖"
+  "our bangalore plan is ONNN babe see you very very soon 💖",
 ];
 
 // ------------------- Utilities -------------------------------------------
@@ -120,7 +114,7 @@ function CardBody({
 // ------------------- Background Hearts -------------------
 function HeartBackground() {
   const particles = useMemo(() => {
-    const items = Array.from({ length: 60 }, (_, i) => i);
+    const items = Array.from({ length: 200 }, (_, i) => i);
     return items;
   }, []);
   const colors = [
@@ -163,7 +157,9 @@ function HeartBackground() {
               delay,
             }}
             onUpdate={(latest: unknown) => {
-              const y = (latest as Record<string, unknown>)?.y as number | undefined;
+              const y = (latest as Record<string, unknown>)?.y as
+                | number
+                | undefined;
               if (
                 typeof y === "number" &&
                 Math.abs(Math.floor(y) % 200) === 0
@@ -336,7 +332,9 @@ export default function LoveNotesApp() {
               </div>
               <div className="leading-tight">
                 <p className="text-xs text-rose-500">for my muksuuu</p>
-                <h1 className="text-lg font-semibold text-rose-500">I Love You</h1>
+                <h1 className="text-lg font-semibold text-rose-500">
+                  I Love You
+                </h1>
               </div>
               <div className="grid h-8 w-8 place-items-center rounded-xl bg-rose-100 text-rose-500">
                 <Sparkles className="h-5 w-5" />
@@ -414,6 +412,13 @@ export default function LoveNotesApp() {
                 </Button>
               )}
             </div>
+          </div>
+
+          {/* Footer */}
+          <div className="text-center mb-4">
+            <p className="text-md text-rose-400/80 font-mono tracking-wide uppercase text-[10px]">
+              made with silly amount of love for my muksuuu
+            </p>
           </div>
         </div>
       )}
