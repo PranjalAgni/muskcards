@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "./components/Button";
-import { Heart, Sparkles, Lock, Eye, EyeOff } from "lucide-react";
+import React, { useEffect, useMemo, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from './components/Button';
+import { Heart, Sparkles, Lock, Eye, EyeOff } from 'lucide-react';
 
 /**
  * 💌 Love Notes – fancy card edition + handwriting font (with debug logs)
@@ -14,54 +14,54 @@ import { Heart, Sparkles, Lock, Eye, EyeOff } from "lucide-react";
 
 // ------------------- Content ----------------------------------------------
 const NOTES: string[] = [
-  "Hey mukssuuu ✨\nBefore anything else… take a deep breath. This little page is just for you.",
-  "I wanted to surprise you the Sunny way and make you feel special and loved ☀️",
-  "I am not good writer like you but taking my best shot at it",
-  "Never thought in my life that turning 27 will bring such a good gift to both of us (but mine is better 😏)",
+  'Hey mukssuuu ✨\nBefore anything else… take a deep breath. This little page is just for you.',
+  'I wanted to surprise you the Sunny way and make you feel special and loved ☀️',
+  'I am not good writer like you but taking my best shot at it',
+  'Never thought in my life that turning 27 will bring such a good gift to both of us (but mine is better 😏)',
   "I believe its all God's plan for us I was supposed to be at home until this diwali but things changed and I came before your birthday 🍰",
-  "The day I started from my home to hyd we were on a non-stop call until the takeoff ✈️",
-  "You tracked me in the sky loved that 🫰🏻",
-  "then continuing that call till I reached home",
-  "from listening music and chatting together to singing each other fav songs 🎤 and watching movies together hand in hand, it feels so natural and so right",
+  'The day I started from my home to hyd we were on a non-stop call until the takeoff ✈️',
+  'You tracked me in the sky loved that 🫰🏻',
+  'then continuing that call till I reached home',
+  'from listening music and chatting together to singing each other fav songs 🎤 and watching movies together hand in hand, it feels so natural and so right',
   'Ab toh meri playlist is also changed from hardcore gym songs to romantic songs 🎧 and "because" is U',
-  "So I wanted to say something to you...",
-  "thoda next kro pahle ⏭️",
-  "thoda aur..... ⌛️",
-  "okay so the thing is 🙉",
-  "meri gulabi gaal wali cutuuuu",
-  "phisal gaya hai dil tujhpeeee ab tu aa ke sambhalll reee 💖",
-  "I love you so so much my cutuuuu ❤️‍🔥🫶❤️‍🔥",
-  "And I’d love to call you my girlfriend. 💕 Will you be mine?",
-  "acha jane se pahle ek chiz aur btani thi..... 🫰🏻",
-  "pahle smile kro babyyyy 🤗",
-  "this was the #1 surprise tabhi I said am working on it 🤫",
-  "but you got so restless toh surprise ke upar wala surprise btana para",
-  "our bangalore plan is ONNN babe see you very very soon 💖",
+  'So I wanted to say something to you...',
+  'thoda next kro pahle ⏭️',
+  'thoda aur..... ⌛️',
+  'okay so the thing is 🙉',
+  'meri gulabi gaal wali cutuuuu',
+  'phisal gaya hai dil tujhpeeee ab tu aa ke sambhalll reee 💖',
+  'I love you so so much my cutuuuu ❤️‍🔥🫶❤️‍🔥',
+  'And I’d love to call you my girlfriend. 💕 Will you be mine?',
+  'acha jane se pahle ek chiz aur btani thi..... 🫰🏻',
+  'pahle smile kro babyyyy 🤗',
+  'this was the #1 surprise tabhi I said am working on it 🤫',
+  'but you got so restless toh surprise ke upar wala surprise btana para',
+  'our bangalore plan is ONNN babe see you very very soon 💖',
 ];
 
 // ------------------- Utilities -------------------------------------------
 const clamp = (v: number, min: number, max: number) =>
   Math.max(min, Math.min(max, v));
 function cn(...parts: Array<string | undefined | false>): string {
-  return parts.filter(Boolean).join(" ");
+  return parts.filter(Boolean).join(' ');
 }
 
 // Password for the love notes
 function getExpectedPassword(): string {
-  return "muskuuu";
+  return 'muskuuu';
 }
 
 // ------------------- Load handwriting Google Fonts -----------------------
 function useHandwritingFonts() {
   useEffect(() => {
-    if (document.getElementById("love-notes-fonts")) {
+    if (document.getElementById('love-notes-fonts')) {
       return;
     }
-    const link = document.createElement("link");
-    link.id = "love-notes-fonts";
-    link.rel = "stylesheet";
+    const link = document.createElement('link');
+    link.id = 'love-notes-fonts';
+    link.rel = 'stylesheet';
     link.href =
-      "https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Patrick+Hand&display=swap";
+      'https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Patrick+Hand&display=swap';
     document.head.appendChild(link);
   }, []);
 }
@@ -74,9 +74,9 @@ function CardShell({
   return (
     <div
       className={cn(
-        "relative rounded-[22px] border border-rose-100/70 bg-white shadow-2xl",
-        "[box-shadow:0_10px_30px_rgba(244,63,94,0.10),0_4px_10px_rgba(0,0,0,0.05)]",
-        "bg-[radial-gradient(120%_80%_at_50%_0%,#fff_0%,#fff7f9_60%,#fff0f3_100%)]",
+        'relative rounded-[22px] border border-rose-100/70 bg-white shadow-2xl',
+        '[box-shadow:0_10px_30px_rgba(244,63,94,0.10),0_4px_10px_rgba(0,0,0,0.05)]',
+        'bg-[radial-gradient(120%_80%_at_50%_0%,#fff_0%,#fff7f9_60%,#fff0f3_100%)]',
         className
       )}
     >
@@ -84,10 +84,10 @@ function CardShell({
       <div className="pointer-events-none absolute inset-0 rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]" />
       <div
         className={cn(
-          "absolute -top-3 left-1/2 -translate-x-1/2 rotate-[-3deg]",
-          "h-6 w-28 rounded-sm opacity-80",
-          "bg-[repeating-linear-gradient(45deg,#fce7f3_0_6px,#ffe4e6_6px_12px)]",
-          "shadow"
+          'absolute -top-3 left-1/2 -translate-x-1/2 rotate-[-3deg]',
+          'h-6 w-28 rounded-sm opacity-80',
+          'bg-[repeating-linear-gradient(45deg,#fce7f3_0_6px,#ffe4e6_6px_12px)]',
+          'shadow'
         )}
       />
       {children}
@@ -102,8 +102,8 @@ function CardBody({
   return (
     <div
       className={cn(
-        "p-6 sm:p-7 relative overflow-hidden rounded-[22px]",
-        "before:pointer-events-none before:absolute before:inset-0 before:bg-[repeating-linear-gradient(0deg,transparent_0,transparent_26px,rgba(244,114,182,0.08)_27px)]",
+        'p-6 sm:p-7 relative overflow-hidden rounded-[22px]',
+        'before:pointer-events-none before:absolute before:inset-0 before:bg-[repeating-linear-gradient(0deg,transparent_0,transparent_26px,rgba(244,114,182,0.08)_27px)]',
         className
       )}
     >
@@ -119,10 +119,10 @@ function HeartBackground() {
     return items;
   }, []);
   const colors = [
-    "text-rose-300",
-    "text-pink-300",
-    "text-rose-400",
-    "text-pink-400",
+    'text-rose-300',
+    'text-pink-300',
+    'text-rose-400',
+    'text-pink-400',
   ];
 
   return (
@@ -150,11 +150,11 @@ function HeartBackground() {
               scale: 0.7 + Math.random() * 0.7,
               rotate: 0,
             }}
-            animate={{ y: "-40%", x: drift, rotate: 15 }}
+            animate={{ y: '-40%', x: drift, rotate: 15 }}
             transition={{
               duration,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: 'easeInOut',
               delay,
             }}
             onUpdate={(latest: unknown) => {
@@ -162,7 +162,7 @@ function HeartBackground() {
                 | number
                 | undefined;
               if (
-                typeof y === "number" &&
+                typeof y === 'number' &&
                 Math.abs(Math.floor(y) % 200) === 0
               ) {
                 // console.log("[hearts] anim y", y);
@@ -181,24 +181,24 @@ function HeartBackground() {
 
 // ------------------- Password Gate ---------------------------------------
 function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
-  const [pwd, setPwd] = useState("");
+  const [pwd, setPwd] = useState('');
   const [show, setShow] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const EXPECTED = getExpectedPassword();
 
   useEffect(() => {
-    const unlocked = localStorage.getItem("love:unlocked");
-    if (unlocked === "true") onUnlock();
+    const unlocked = localStorage.getItem('love:unlocked');
+    if (unlocked === 'true') onUnlock();
   }, [onUnlock]);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const ok = pwd.trim() === EXPECTED;
     if (ok) {
-      localStorage.setItem("love:unlocked", "true");
+      localStorage.setItem('love:unlocked', 'true');
       onUnlock();
     } else {
-      setError("That’s not it — try again 💗");
+      setError('That’s not it — try again 💗');
     }
   };
 
@@ -208,7 +208,7 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 300, damping: 28 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 28 }}
           className="w-full"
         >
           <CardShell>
@@ -227,7 +227,7 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
                 <form onSubmit={submit} className="w-full space-y-3">
                   <div className="flex rounded-xl border border-rose-200 bg-white p-2 shadow-sm text-rose-500">
                     <input
-                      type={show ? "text" : "password"}
+                      type={show ? 'text' : 'password'}
                       value={pwd}
                       onChange={(e) => setPwd(e.target.value)}
                       placeholder="Enter the secret password"
@@ -266,21 +266,21 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
 
 // ------------------- Dev Self-Tests (no runtime behavior change) ---------
 function assert(name: string, cond: boolean) {
-  if (!cond) throw new Error("Test failed: " + name);
+  if (!cond) throw new Error('Test failed: ' + name);
 }
 function runSelfTests() {
   // Utility tests
-  assert("clamp core", clamp(5, 0, 10) === 5);
-  assert("clamp low", clamp(-3, 0, 2) === 0);
-  assert("clamp high", clamp(9, 0, 2) === 2);
+  assert('clamp core', clamp(5, 0, 10) === 5);
+  assert('clamp low', clamp(-3, 0, 2) === 0);
+  assert('clamp high', clamp(9, 0, 2) === 2);
 
   // Content tests
-  assert("notes non-empty", Array.isArray(NOTES) && NOTES.length > 0);
-  assert("notes are strings", typeof NOTES[0] === "string");
+  assert('notes non-empty', Array.isArray(NOTES) && NOTES.length > 0);
+  assert('notes are strings', typeof NOTES[0] === 'string');
 
   // Password expectation test (should always return a non-empty string)
   const pw = getExpectedPassword();
-  assert("password non-empty string", typeof pw === "string" && pw.length > 0);
+  assert('password non-empty string', typeof pw === 'string' && pw.length > 0);
 }
 
 // ------------------- Main App --------------------------------------------
@@ -295,10 +295,10 @@ export default function LoveNotesApp() {
     try {
       runSelfTests();
     } catch (e) {
-      console.error("[tests] failed", e);
+      console.error('[tests] failed', e);
     }
     // Set localStorage to always unlocked
-    localStorage.setItem("love:unlocked", "true");
+    // localStorage.setItem("love:unlocked", "true");
   }, []);
 
   const next = () => {
@@ -351,7 +351,7 @@ export default function LoveNotesApp() {
                 initial={{ y: 30, opacity: 0, rotate: -0.7 }}
                 animate={{ y: 0, opacity: 1, rotate: 0 }}
                 exit={{ y: -30, opacity: 0, rotate: 0.7 }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                 className="w-full"
               >
                 <CardShell>
@@ -361,7 +361,7 @@ export default function LoveNotesApp() {
                       style={{
                         fontFamily:
                           "'Caveat', 'Patrick Hand', cursive, ui-sans-serif, system-ui",
-                        fontSize: "22px",
+                        fontSize: '22px',
                         lineHeight: 1.55,
                       }}
                     >
@@ -381,8 +381,8 @@ export default function LoveNotesApp() {
                 <div
                   key={i}
                   className={
-                    "h-1.5 rounded-full transition-all " +
-                    (i <= index ? "bg-rose-400 w-5" : "bg-rose-200 w-2")
+                    'h-1.5 rounded-full transition-all ' +
+                    (i <= index ? 'bg-rose-400 w-5' : 'bg-rose-200 w-2')
                   }
                 />
               ))}
