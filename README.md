@@ -1,4 +1,4 @@
-# Muskcards - App with a good impression 
+# Muskcards - App with a good impression. 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
