@@ -18,6 +18,8 @@ will convert this app to a PWA
 
 with musku today
 
+last commit of the year
+
 came to electronic city socials
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
