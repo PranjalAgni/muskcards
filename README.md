@@ -24,6 +24,8 @@ happy new year 01/01/2026
 
 completed debug december challenge
 
+went to blr brewing again
+
 came to electronic city socials
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
